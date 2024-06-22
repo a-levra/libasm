@@ -23,5 +23,5 @@ while_string:
 
 null_byte_found:
     mov rax, rcx   
-    ret           
+    ret
 
