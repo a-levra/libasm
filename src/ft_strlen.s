@@ -1,10 +1,10 @@
 ; Function: size_t ft_strlen(const char * string);
 ; Inputs:
-;   %rdi - Pointer to the string (const char *s)
+;   rdi - Pointer to the string (const char *s)
 ; Variable:
-;   %rcx, ft_strlen's counter
+;   rcx, ft_strlen's counter
 ; Output:
-;   %rax - returned value
+;   rax - returned value
 
 section .text
 
