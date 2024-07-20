@@ -13,8 +13,9 @@
 NAME = asm 
 
 SRC =	ft_strlen.s\
+		ft_strcpy.s\
 
-FLAGS = #-nostdlib
+FLAGS = -g -ggdb #-nostdlib
 OBJ = $(addprefix obj/,$(SRC:.s=.o))
 
 all	: create_obj_folder
@@ -22,7 +23,7 @@ all	: create_obj_folder
 	@make end_message
 
 obj/%.o : src/%.s Makefile
-	nasm -f elf64 $< -o $@
+	nasm -f elf64 -g $< -o $@
 
 $(NAME): $(OBJ)
 	gcc $(OBJ) src/main.c ${FLAGS} -o $(NAME)
@@ -37,10 +38,8 @@ clean:
 	@if [ -d "./obj" ]; then\
 		rm -r obj;\
 	fi
-	make clean -C libft
 
 fclean: clean
-	make fclean -C libft
 	rm -f $(NAME)
 	rm -f $(NAME)_bonus
 
