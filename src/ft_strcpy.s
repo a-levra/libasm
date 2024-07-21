@@ -1,4 +1,4 @@
-; Function: char *ft_strcpy(char *dest, const char *src);
+; Function: char *ft_strcpy(const char *dest, const char *src);
 ; Arguments:
 ;	rdi - dest (destination buffer)
 ;	rsi - src (source string)

@@ -2,7 +2,7 @@
 #include <stdint.h>
 #include <unistd.h>
 #include <string.h>
-
+//#include "ft_strcmp.c"
 //extern long long ft_strlen(const char *s);
 extern size_t ft_strlen(const char *s);
 extern char *ft_strcpy(char *dest, const char *src);
@@ -13,7 +13,7 @@ void	test_ft_strlen();
 void	test_ft_strcmp();
 
 int main() {
-
+	test_ft_strcmp();
 	test_ft_strcpy();
 	test_ft_strlen();
     return 0;
@@ -50,4 +50,24 @@ void	test_ft_strlen(){
 	}
 	printf("OK\n");
 
+}
+void	test_ft_strcmp(){
+	char s1[10] = "123456789";
+	char s2[10] = "12345AAA";
+	int a = strcmp(s1,s2);	
+	int b = ft_strcmp(s1,s2);	
+	if ( a == b)
+		printf("a == b\n");
+	if (strcmp(s1,s2) == -11)
+		printf("OK\n");
+	if (-11 == ft_strcmp(s1,s2))
+		printf("OK\n");
+	if (strcmp(s1,s2) == ft_strcmp(s1,s2))
+		printf("OK1\n");
+	if (ft_strcmp(s1,s2) == strcmp(s1,s2))
+		printf("OK2\n");
+	else{
+		printf("strcmp : %d\nft_strcmp : %d\n", strcmp(s1,s2), ft_strcmp(s1,s2));
+		printf("KO\n");
+	}
 }

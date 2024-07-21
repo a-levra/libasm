@@ -14,6 +14,15 @@
 	p (char) $al
 nexti is the way to do step-by-step in assembly
 https://youtu.be/ZZTUgIFm9u0?si=DOKEF5qYj-ufHYR5
+
+## How do we retrieve parameters in the asm function ? 
+    rdi - First argument
+    rsi - Second argument
+    rdx - Third argument
+    rcx - Fourth argument
+    r8 - Fifth argument
+    r9 - Sixth argument
+
 # ft_strcpy
 
 ## why did we do a `mov al, byte [rsi]` ? 
