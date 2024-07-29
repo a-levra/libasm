@@ -7,15 +7,18 @@
 extern size_t ft_strlen(const char *s);
 extern char *ft_strcpy(char *dest, const char *src);
 extern int ft_strcmp(const char *s1, const char *s2);
+extern ssize_t ft_write(int fd, const void *buf, size_t count);
 
+void	test_ft_write();
 void	test_ft_strcpy();
 void	test_ft_strlen();
 void	test_ft_strcmp();
 
 int main() {
-	test_ft_strcmp();
-	test_ft_strcpy();
-	test_ft_strlen();
+	test_ft_write();
+//	test_ft_strcmp();
+//	test_ft_strcpy();
+//	test_ft_strlen();
     return 0;
 }
 
@@ -70,4 +73,13 @@ void	test_ft_strcmp(){
 		printf("strcmp : %d\nft_strcmp : %d\n", strcmp(s1,s2), ft_strcmp(s1,s2));
 		printf("KO\n");
 	}
+}
+
+
+void	test_ft_write(){
+	char *msg = "Message to stdout";
+	ft_write(1, msg, strlen(msg));
+	perror("write");
+	ft_write(1203971, msg, strlen(msg));
+	perror("write");
 }

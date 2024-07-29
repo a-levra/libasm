@@ -15,6 +15,7 @@ NAME = asm
 SRC =	ft_strlen.s\
 		ft_strcpy.s\
 		ft_strcmp.s\
+		ft_write.s \
 
 FLAGS = -g -ggdb #-nostdlib
 OBJ = $(addprefix obj/,$(SRC:.s=.o))

@@ -42,3 +42,20 @@ Here’s a quick overview of the different sizes:
 
 Kind of.
 `test byte [rsi], byte [rsi]` is problematic because test is generally used with registers or immediate values, not with memory operands in this way.
+
+# ft_write
+
+## What is the wrt ..plt thing ?
+
+Basically, this ensure that the executable is still a PIE (position independant executable)
+By specifying PLT, I ask to NASM to use a PLT to store the address of the errno function
+Documentation :
+Referring to a procedure name using wrt ..plt causes the linker to build a procedure linkage table entry for the symbol, and the reference gives the address of the PLT entry.
+You can only use this in contexts which would generate a PC-relative relocation normally 
+(i.e. as the destination for CALL or JMP), since ELF contains no relocation type to refer to PLT entries absolutely.
+https://www.tortall.net/projects/yasm/manual/html/objfmt-elf32-wrt.html
+
+## jl ?
+
+This means JUMP LESS (often use with the cmp instruction ..). That basically means : jump if left operand is less than right operand (in Intel syntax)
+
